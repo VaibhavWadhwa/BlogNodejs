@@ -3,7 +3,7 @@ const CONSTANTS = require('../config/constant');
  const banner =  [
 {
 id : 1,
-url : `http://localhost:${CONSTANTS.PORT}/images/TropicalImage.jpg`,
+url : `http://${process.env.IP}:${CONSTANTS.PORT}/images/TropicalImage.jpg`,
 type : "Travel",
 date : "Janary 24, 2023",
 title : "Himachal Pradesh"
