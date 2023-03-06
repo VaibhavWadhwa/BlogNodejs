@@ -1,9 +1,10 @@
 const CONSTANTS = require('../config/constant');
+const IP = require('ip');
 
  const banner =  [
 {
 id : 1,
-url : `http://${process.env.IP}:${CONSTANTS.PORT}/images/TropicalImage.jpg`,
+url : `http://${IP.address()}:${CONSTANTS.PORT}/images/TropicalImage.jpg`,
 type : "Travel",
 date : "Janary 24, 2023",
 title : "Himachal Pradesh"
