@@ -1,5 +1,5 @@
 const CONSTANTS = require('../config/constant');
-const IP = require('ip');
+// const IP = require('ip');
 
  const banner =  [
 {
