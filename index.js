@@ -1,7 +1,8 @@
 const express = require('express');
-// const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 const cors = require('cors');
 const path = require('path')
+const MongoClient = require('mongoose');
 
 const CONSTANTS = require('./config/constant');
 const bannerRouter = require('./routes/banner');
@@ -18,8 +19,8 @@ app.use(cors())
 
 
 
-// app.use(bodyParser.urlencoded({extended : false}));
-// app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended : false}));
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'public')));
 app.use("/banner",bannerRouter);
 app.use("/bollywood",bollywoodRouter);
@@ -31,5 +32,7 @@ app.use("/technology",technologyRouter);
 
 
 app.listen(CONSTANTS.PORT, ()=>{
+    MongoClient.connect("mongodb+srv://Vaibhav:Vaibhav@cluster1.kfkbmmm.mongodb.net/Blog?retryWrites=true&w=majority").then(() =>{
+    }).catch(err => console.log(err));
     console.log(`Server is listening at http://localhost:${CONSTANTS.PORT}`)
 })
