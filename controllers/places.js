@@ -1,4 +1,3 @@
-const places = require('../utility/places');
 const Places = require('../model/places');
 
 const getPlacesDetailsController = (req,res) =>{
